@@ -9,7 +9,7 @@ import org.mariuszgromada.math.mxparser.Expression
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var display: EditText
+    public lateinit var display: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         display.setSelection(cursorPos + 1)
     }
 
-    fun equalsBTN(view: View) {
+    fun equalsBTN(view: View?) {
         var userExp = display.text.toString()
         userExp = userExp.replace("÷", "/")
         userExp = userExp.replace("×", "*")
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         display.setSelection(display.text.length)
     }
 
-    fun backspaceBTN(view: View) {
+    fun backspaceBTN(view: View?) {
         val cursorPos = display.selectionStart
         val textLen = display.text.length
         if (cursorPos != 0 && textLen != 0) {
